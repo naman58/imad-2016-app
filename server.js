@@ -34,6 +34,7 @@ function createtemplate (data) {
                     <hr/>
                     <h3>${heading}</h3>
                     <div>${date}</div>
+                    <div align="left"><img src="https://en.wikipedia.org/wiki/Algemeen_Dagblad#/media/File:New_Logo_AD.jpg" alt="advertisement"><br><a href="1.com">ad link</a></div>
                     <div>${content}</div>
                </div>     
             </BODY>
