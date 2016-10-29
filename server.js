@@ -26,7 +26,7 @@ function createtemplate (data) {
                 <title>${title}</title>
                  <link href="/ui/style.css" rel="stylesheet" />
             </head>    
-            <BODY>
+            <BODY background="https://static.pexels.com/photos/3247/nature-forest-industry-rails.jpg">
                 <div class="container">
                     <div>
                     <a href="/">home</a>
