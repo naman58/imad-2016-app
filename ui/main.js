@@ -4,5 +4,5 @@ element.innerHTML = 'new VALUE'
 //move the image 
 var img=document.getElementById('img');
 img.onclick = function() {
-    img.style.increaseleft='1000px';
+    img.style.marginleft='1000px';
 }
