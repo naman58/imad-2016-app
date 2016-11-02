@@ -5,4 +5,4 @@ element.innerHTML = 'new VALUE'
 var img=document.getElementById('MADI');
 img.onclick = function() {
     img.style.marginleft='1000px';
-}
+};
