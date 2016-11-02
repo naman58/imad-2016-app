@@ -28,7 +28,7 @@ var articles= {
         content: `<p>ethis is the content for my third article</p>`
     },
 };
-function createtempplate (data) {
+function createtemplate (data) {
     var title= data.title;
     var date= data.date;
     var heading= data.heading;
@@ -63,9 +63,9 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleNames', function (req, res) {
-    var articleNAmes=req.param.artcleNames;
-   res.send(createtemplate(article[articleNames]));
+app.get('/:articleName', function (req, res) {
+    var articleNAme = req.params.artcleName;
+   res.send(createtemplate(article[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
