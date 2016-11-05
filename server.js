@@ -93,7 +93,7 @@ app.get('/submit-name/:name',function(req,res) {
     var name = req.params.name; //1000
     names.push(name);
     //json-javascript object notation
-    res.sent(JSON.stringify(names));
+    res.send(JSON.stringify(names));
 });
 
 
