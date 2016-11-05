@@ -93,7 +93,7 @@ app.get('/:articleName', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-var Pool = require('pg').Pool;
+var pool = new Pool(config);
 app.get('/test-db', function(req,res){
    //make a request
    //return a response with the results
