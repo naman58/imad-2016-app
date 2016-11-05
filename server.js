@@ -69,11 +69,27 @@ function createtemplate (data) {
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+var pool = new Pool(config);
+app.get('/test-db', function(req,res) {
+   //make a request
+   //return a response with the results
+   pool.query('SELECT * FROM test', function(err,result){
+       if (err){
+           res.status(500).send(err.toString());
+       } else {
+           res.send(JSON.stringify(result.rows));
+           
+       }
+   });
+});
+
 var counter=0;
 app.get('/counter',function(req,res) {
    counter=counter + 1;
    res.send(counter.toString());
 });
+
 var names=[];
 app.get('/submit-name',function(req,res) {//url: /submit-name?name=xxxxx
     //get he name from the request 
@@ -93,19 +109,7 @@ app.get('/:articleName', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-var pool = new Pool(config);
-app.get('/test-db', function(req,res) {
-   //make a request
-   //return a response with the results
-   pool.query('SELECT * FROM test', function(err,result){
-       if (err){
-           res.status(500).send(err.toString());
-       } else {
-           res.send(JSON.stringify(result.rows));
-           
-       }
-   });
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
