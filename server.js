@@ -92,7 +92,7 @@ app.get('/counter',function(req,res) {
 
 var names=[];
 app.get('/submit-name',function(req,res) {//url: /submit-name?name=xxxxx
-    //get he name from  the request 
+    //get he name from the request 
     var name = req.query.name; //1000
     names.push(name);
     //json-javascript object notation
